@@ -1,3 +1,7 @@
+'use strict'
+
+var ngrok = require('ngrok');
+
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -30,9 +34,9 @@ module.exports = function(grunt) {
         image_resize: {
             resize: {
                 options: {
-                     width: 100,
-                     height: 100,
-                     overwrite: true
+                    width: 100,
+                    height: 100,
+                    overwrite: true
                 },
                 files: {
                     'src/views/images/pizzeria.jpg': 'src/views/images/pizzeria.jpg'
@@ -103,6 +107,32 @@ module.exports = function(grunt) {
                     'dist/views/pizza.html': 'src/views/pizza.html'
                 }
             }
+        },
+        inline: {
+        dist: {
+            options:{
+                cssmin: true,
+                tag: ''
+            },
+            src: 'dist/*.html'
+        }
+    },
+        pagespeed: {
+            options: {
+                nokey: true,
+                locale: "en_GB",
+                threshold: 40
+            },
+            local: {
+                options: {
+                    strategy: "desktop"
+                }
+            },
+            mobile: {
+                options: {
+                    strategy: "mobile"
+                }
+            }
         }
 
     });
@@ -122,7 +152,29 @@ module.exports = function(grunt) {
     //Load the plugin that provides the html min task.
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
+    //Load the plugin for the pagespeed task
+    grunt.loadNpmTasks('grunt-inline');
+
+    //Load the plugin for the pagespeed task
+    grunt.loadNpmTasks('grunt-pagespeed');
+
+    // Register customer task for ngrok
+    grunt.registerTask('psi-ngrok', 'Run pagespeed with ngrok', function() {
+        var done = this.async();
+        var port = 8080;
+
+        ngrok.connect(port, function(err, url) {
+            if (err !== null) {
+                grunt.fail.fatal(err);
+                return done();
+            }
+            grunt.config.set('pagespeed.options.url', url);
+            grunt.task.run('pagespeed');
+            done();
+        });
+    });
+
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'cssmin', 'image_resize', 'imagemin', 'htmlmin']);
+    grunt.registerTask('default', ['uglify', 'cssmin', 'image_resize', 'imagemin', 'htmlmin', 'inline', 'psi-ngrok']);
 
 };
