@@ -9,10 +9,12 @@ module.exports = function(grunt) {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
-            build: {
-                src: 'src/js/perfmatters.js',
-                dest: 'dist/js/perfmatters.min.js'
-            }
+            my_target: {
+                files: {
+                     'dist/js/perfmatters.min.js': ['src/js/perfmatters.js'],
+                     'dist/views/js/main.min.js': ['src/views/js/main.js']
+      }
+    }
         },
         cssmin: {
             target: {
