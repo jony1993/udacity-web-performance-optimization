@@ -26,4 +26,4 @@ The build process will:
 - asynchron js
 
 ####optimization for pizza scroll
-- 
+- bootstrap classes instead of percent value
