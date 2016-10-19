@@ -6,29 +6,30 @@ This is Udacity's project on Website Optimization from the Front-End Web Develop
 ### How to run
 #### Install/Run Grunt (http://gruntjs.com/getting-started Getting Started Guide)
 - Change to the project's root directory.
-- Install project dependencies with npm install.
-- Run Grunt with grunt.
+- Install project dependencies with 'npm install'.
+- Run Grunt with 'grunt'.
+
 The build process will:
--- move all production code files in the folder ./dist
--- minify all html, css and js files
--- inline css files
--- resize and optimize images 
--- html optimization
--- pagespeed test via ngrok
+  - move all production code files in the folder ./dist
+  - minify all html, css and js files
+  - inline css files
+  - resize and optimize images 
+  - html optimization
+  - pagespeed test via ngrok
 
 
-###optimization
-####optimization for Pagespeed
+###Optimization
+####Optimization for Pagespeed
 - inline css
 - minify css
 - image optimization
 - html cleaning
 - asynchron js
 
-####optimization for pizza scroll
+####Optimization for pizza scroll
 - bootstrap classes instead of percent value
 - update number of pizza elements (from 200 to 35)
 - updatePositions(): Moved the document.body.scrollTop function out of loop
 
-####optimization for resize pizza
+####Optimization for resize pizza
 - changePizzaSizes() optimization
