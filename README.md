@@ -28,3 +28,4 @@ The build process will:
 ####optimization for pizza scroll
 - bootstrap classes instead of percent value
 - update number of pizza elements (from 200 to 35)
+- updatePositions(): Moved the document.body.scrollTop function out of loop
