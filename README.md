@@ -9,12 +9,12 @@ This is Udacity's project on Website Optimization from the Front-End Web Develop
 - Install project dependencies with npm install.
 - Run Grunt with grunt.
 The build process will:
-- ave all production code files in the folder ./dist
-- minify all html, css and js files
-- inline css files
-- resize and optimize images 
-- html optimization
-- pagespeed test via ngrok
+-- move all production code files in the folder ./dist
+-- minify all html, css and js files
+-- inline css files
+-- resize and optimize images 
+-- html optimization
+-- pagespeed test via ngrok
 
 
 ###optimization
@@ -31,4 +31,4 @@ The build process will:
 - updatePositions(): Moved the document.body.scrollTop function out of loop
 
 ####optimization for resize pizza
-- 
+- changePizzaSizes() optimization
