@@ -6,8 +6,8 @@ This is Udacity's project on Website Optimization from the Front-End Web Develop
 ### How to run
 #### Install/Run Grunt (http://gruntjs.com/getting-started Getting Started Guide)
 - Change to the project's root directory.
-- Install project dependencies with 'npm install'.
-- Run Grunt with 'grunt'.
+- Install project dependencies with `npm install`.
+- Run Grunt with `grunt`.
 
 The build process will:
   - move all production code files in the folder ./dist
