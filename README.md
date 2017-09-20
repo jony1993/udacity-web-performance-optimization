@@ -18,18 +18,18 @@ The build process will:
   - pagespeed test via ngrok
 
 
-###Optimization
-####Optimization for Pagespeed
+### Optimization
+#### Optimization for Pagespeed
 - inline css
 - minify css
 - image optimization
 - html cleaning
 - asynchron js
 
-####Optimization for pizza scroll
+#### Optimization for pizza scroll
 - bootstrap classes instead of percent value
 - update number of pizza elements (from 200 to 35)
 - updatePositions(): Moved the document.body.scrollTop function out of loop
 
-####Optimization for resize pizza
+#### Optimization for resize pizza
 - changePizzaSizes() optimization
